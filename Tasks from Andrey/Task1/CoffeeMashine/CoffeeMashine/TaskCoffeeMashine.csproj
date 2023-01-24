@@ -43,11 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Methods.cs" />
+    <Compile Include="CoffeeMashine.cs" />
+    <Compile Include="Human.cs" />
+    <Compile Include="TypeOfCoffeeMashine\CapsuleMashine.cs" />
+    <Compile Include="TypeOfCoffeeMashine\CarobCoffeeMachine.cs" />
+    <Compile Include="TypeOfCoffee\Latte.cs" />
+    <Compile Include="TypeOfCoffee\Cappuccino.cs" />
+    <Compile Include="TypeOfCoffee\Americano.cs" />
+    <Compile Include="Coffee.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
