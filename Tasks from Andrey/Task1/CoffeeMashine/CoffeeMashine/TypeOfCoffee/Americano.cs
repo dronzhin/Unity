@@ -12,6 +12,6 @@ namespace TaskCoffeeMashine
 
         public override int coffeeTaste => 7;
 
-        public override string coffeeTasteString => $"Американо имеет {Methods.CoffeeTaste(coffeeTaste)}, но на любителя";
+        public override string coffeeTasteString => $"Американо - имеет {Methods.CoffeeTaste(coffeeTaste)}, но на любителя";
     }
 }

@@ -12,5 +12,9 @@ namespace TaskCoffeeMashine
         {
             coffeeMashine.MakeCoffee(coffee);
         }
+        public void MakeCoffeeWithAdditives(CoffeeMashine coffeeMashine, Coffee coffee, string[] coffeeAdditives)
+        {
+            coffeeMashine.MakeCoffeeWithAdditives(coffee, coffeeAdditives);
+        }
     }
 }

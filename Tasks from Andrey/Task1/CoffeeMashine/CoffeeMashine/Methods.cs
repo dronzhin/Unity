@@ -37,34 +37,85 @@ namespace TaskCoffeeMashine
                     return arrayTaste[4];
             }
         }
-        //public static void CoffeeTaste(int multiplier)
-        //{
-        //    string[] arrayTaste = { "плохой вкус", "Нормальный вкус", "отличный вкус", "изысканный вкус", "неизвестный вкус" };
-        //    switch (multiplier)
-        //    {
-        //        case 1: Console.Write(arrayTaste[0]);
-        //            break;
-        //        case 2: Console.Write(arrayTaste[0]);
-        //            break;
-        //        case 3: Console.Write(arrayTaste[0]);
-        //            break;
-        //        case 4: Console.Write(arrayTaste[1]);
-        //            break;   
-        //        case 5: Console.Write(arrayTaste[1]);
-        //            break;
-        //        case 6: Console.Write(arrayTaste[1]);
-        //            break;
-        //        case 7: Console.Write(arrayTaste[2]);
-        //            break;
-        //        case 8: Console.Write(arrayTaste[2]);
-        //            break;
-        //        case 9: Console.Write(arrayTaste[3]);
-        //            break;
-        //        case 10: Console.Write(arrayTaste[3]);
-        //            break;
-        //        default: Console.Write(arrayTaste[4]);
-        //            break;
-        //    }
-        //}
+        public static string GetString(string request)
+        {
+            Console.Write(request + " - ");
+            return Console.ReadLine();
+        }
+        public static int GetValue(string request)
+        {
+            Console.Write(request + " - ");
+            return int.Parse(Console.ReadLine());
+        }
+        public static string TypeOfCoffeeMashine(int multiplier)
+        {
+            string[] arrayTaste = { "Капсульная кофемашина", "Рожковая кофемашина", "Неизвестная кофемашина" };
+            switch (multiplier)
+            {
+                case 1:
+                    return arrayTaste[0];
+                case 2:
+                    return arrayTaste[1];
+                default:
+                    return arrayTaste[2];
+            }
+        }
+        public static string TypeOfCoffee(int multiplier)
+        {
+            string[] arrayTaste = { "Американо", "Капучино", "Латте", "Неизвестное кофе" };
+            switch (multiplier)
+            {
+                case 1:
+                    return arrayTaste[0];
+                case 2:
+                    return arrayTaste[1];
+                case 3:
+                    return arrayTaste[2];
+                default:
+                    return arrayTaste[3];
+            }
+        }
+        public static string[] createAdditivesArray()
+        {
+            string[] arrayTaste = { "Корица", "Ваниль", "Гвоздика", "Мускатный орех", "Апельсиновая корка", "Неизвестный ингредиент" };
+            string[] array = new string[arrayTaste.Length];
+            for (int i = 0; i < arrayTaste.Length; i++)
+            {
+                try
+                {
+                    int answer = GetValue("\nВведите добавки к вашему кофе, выберите цифру " +
+                        "\n1 - Корица" +
+                        "\n2 - Ваниль" +
+                        "\n3 - Гвоздика" +
+                        "\n4 - Мускатный орех" +
+                        "\n5 - Апельсиновая корка" +
+                        "\n6 - Закончить выбор ингридиентов" +
+                        "\nВаш ответ");
+                    if (answer == 6)
+                    {
+                        Array.Resize(ref array, i);
+                        Console.WriteLine("Вы выбрали ингридиенты \n" + string.Join(" ", array));
+                        return array;
+
+                    }
+                    if (answer > 0 && answer <= array.Length)
+                    {
+                        array[i] = arrayTaste[answer - 1];
+                        
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Вы ввели не число от 1 до {array.Length}");
+                        i -= 1;
+                    }
+                }
+                catch (Exception)
+                {
+                    Console.WriteLine($"Вы ввели не число от 1 до {array.Length}");
+                }   
+            }
+            Console.WriteLine("Вы выбрали ингридиенты \n" + string.Join(" ", array));
+            return array;
+        }
     }
 }
