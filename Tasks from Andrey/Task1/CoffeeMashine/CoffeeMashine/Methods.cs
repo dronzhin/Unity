@@ -13,25 +13,14 @@ namespace TaskCoffeeMashine
             string[] arrayTaste = { "плохой вкус", "Нормальный вкус", "отличный вкус", "изысканный вкус", "неизвестный вкус" };
             switch (multiplier)
             {
-                case 1:
-                     return arrayTaste[0];
-                case 2:
+
+                case int n when (n <= 3):
                     return arrayTaste[0];
-                case 3:
-                    return arrayTaste[0];
-                case 4:
+                case int n when (n > 3 && n <= 6):
                     return arrayTaste[1];
-                case 5:
-                    return arrayTaste[1];
-                case 6:
-                    return arrayTaste[1];
-                case 7:
+                case int n when (n > 6 && n <= 8):
                     return arrayTaste[2];
-                case 8:
-                    return arrayTaste[2];
-                case 9:
-                    return arrayTaste[3];
-                case 10:
+                case int n when (n > 8 && n <= 10):
                     return arrayTaste[3];
                 default:
                     return arrayTaste[4];
